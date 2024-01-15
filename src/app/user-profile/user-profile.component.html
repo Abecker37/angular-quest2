@@ -1,0 +1,26 @@
+
+    <div class="container">
+        <header class="img-container">
+            <img [src]="user.photo" />
+        </header>
+        <section class="content">
+            <div>
+                <div class="name">
+                    <p>Nom : {{ user.name }}</p>
+                    <p>Prénom : {{ user.firstName }}</p>
+                </div>
+                <p [hidden]="!showAge">Age: {{ user.age }}</p>
+            </div>
+            <div>
+                <p>{{ biography }}</p>
+                <div class="form-input">
+                    <label for="biography">Biographie:</label>
+                    <input id="biography" [(ngModel)]="biography" type="text" />
+                </div>
+            </div>
+        </section>
+    
+    <footer>
+        <button (click)="toggleAge()">Afficher/Masquer mon âge</button>
+    </footer>
+</div>
