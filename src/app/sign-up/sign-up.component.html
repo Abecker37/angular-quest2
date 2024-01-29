@@ -11,7 +11,7 @@
   </fieldset>
 
 
-  <div *ngIf="firstName.errors">
+  <div *ngIf="signUp.submitted && firstName.errors">
     <span *ngIf="firstName.errors?.['required']">Le Prénom est requis</span>
     <span *ngIf="firstName.errors?.['minlength']">Le Prénom doit être supérieure à 3 caractères</span>
     <span *ngIf="firstName.errors?.['maxlength']">Le Prénom doit être inférieure à 15 caractères</span>
@@ -22,7 +22,7 @@
     <input id="lastName" name="lastName" type="text" [(ngModel)]="model.lastName" #lastName="ngModel" required minlength="3" maxlength="15"/>
   </fieldset>
 
-<div *ngIf="lastName.errors">
+<div *ngIf="signUp.submitted && lastName.errors">
     <span *ngIf="lastName.errors?.['required']">Le Nom est requis</span>
     <span *ngIf="lastName.errors?.['minlength']">Le Nom doit être supérieure à 3 caractères</span>
     <span *ngIf="lastName.errors?.['maxlength']">Le Nom ne dois pas dépasser 15 caractères</span>
@@ -33,7 +33,7 @@
     <input id="email" name="email" type="email" [(ngModel)]="model.email" #email="ngModel" required email>
   </fieldset>
 
-  <div *ngIf="email.errors">
+  <div *ngIf="signUp.submitted && email.errors">
     <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
     <span *ngIf="email.errors?.['email']">L'adresse email doit être valide</span>
   </div>
@@ -43,7 +43,7 @@
     <input id="password" name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required minlength="5" maxlength="30"/>
   </fieldset>
 
-  <div *ngIf="password.errors">
+  <div *ngIf="signUp.submitted && password.errors">
     <span *ngIf="password.errors?.['required']">Le mot de passe est requis</span>
     <span *ngIf="password.errors?.['minlength']">Le mot de passe doit être supérieure à 5 caractères</span>
     <span *ngIf="password.errors?.['maxlength']">Le Mot de passe ne doit pas dépasser 30 caractères</span>
