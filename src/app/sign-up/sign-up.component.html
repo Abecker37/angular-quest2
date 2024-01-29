@@ -1,1 +1,53 @@
-<p>sign-up works!</p>
+<form #signUp="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    Form submitted ? {{signUp.submitted}}
+    Form valid ? {{signUp.valid}}
+    Form invalid ? {{signUp.invalid}}
+  </div>
+
+  <fieldset>
+    <label for="firstName">Firstname</label>
+    <input id="firstName" name="firstName" type="text" [(ngModel)]="model.firstName" #firstName="ngModel" required minlength="3" maxlength="15"/>
+  </fieldset>
+
+
+  <div *ngIf="firstName.errors">
+    <span *ngIf="firstName.errors?.['required']">Le Prénom est requis</span>
+    <span *ngIf="firstName.errors?.['minlength']">Le Prénom doit être supérieure à 3 caractères</span>
+    <span *ngIf="firstName.errors?.['maxlength']">Le Prénom doit être inférieure à 15 caractères</span>
+  </div>
+
+<fieldset>
+    <label for="lastName">Lastname</label>
+    <input id="lastName" name="lastName" type="text" [(ngModel)]="model.lastName" #lastName="ngModel" required minlength="3" maxlength="15"/>
+  </fieldset>
+
+<div *ngIf="lastName.errors">
+    <span *ngIf="lastName.errors?.['required']">Le Nom est requis</span>
+    <span *ngIf="lastName.errors?.['minlength']">Le Nom doit être supérieure à 3 caractères</span>
+    <span *ngIf="lastName.errors?.['maxlength']">Le Nom ne dois pas dépasser 15 caractères</span>
+  </div>
+
+  <fieldset>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" [(ngModel)]="model.email" #email="ngModel" required email>
+  </fieldset>
+
+  <div *ngIf="email.errors">
+    <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
+    <span *ngIf="email.errors?.['email']">L'adresse email doit être valide</span>
+  </div>
+
+  <fieldset>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required minlength="5" maxlength="30"/>
+  </fieldset>
+
+  <div *ngIf="password.errors">
+    <span *ngIf="password.errors?.['required']">Le mot de passe est requis</span>
+    <span *ngIf="password.errors?.['minlength']">Le mot de passe doit être supérieure à 5 caractères</span>
+    <span *ngIf="password.errors?.['maxlength']">Le Mot de passe ne doit pas dépasser 30 caractères</span>
+  </div>
+    <button type="reset">Restaurer</button>
+    <button type="submit">Enregistrer</button>
+</form>

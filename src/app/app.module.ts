@@ -6,6 +6,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { MyFormComponent } from './my-form/my-form.component';
 
 @NgModule({
 
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
         MenuComponent,
         UserProfileComponent,
         SignUpComponent,
+        MyFormComponent,
     ],
 
     imports: [
