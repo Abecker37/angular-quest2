@@ -5,8 +5,9 @@ import { MenuComponent } from './menu/menu.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MyFormComponent } from './my-form/my-form.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @NgModule({
 
@@ -16,12 +17,14 @@ import { MyFormComponent } from './my-form/my-form.component';
         UserProfileComponent,
         SignUpComponent,
         MyFormComponent,
+        SearchMovieComponent
     ],
 
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+         ReactiveFormsModule,
     ],
 
     providers: [],
